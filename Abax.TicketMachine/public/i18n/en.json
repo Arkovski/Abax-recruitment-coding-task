@@ -1,0 +1,10 @@
+{
+  "Common": {
+    "BuyTicket": "Buy ticket (click)"
+  },
+  "Tickets": {
+    "TrainLabel": "Train tickets",
+    "StationName": "Station name",
+    "NoStations": "No stations. Please contact: +48 666 666 666"
+  }
+}

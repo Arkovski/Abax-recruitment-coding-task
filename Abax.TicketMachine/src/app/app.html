@@ -1,0 +1,21 @@
+<app-toast></app-toast>
+<router-outlet></router-outlet>
+
+<div class="position-fixed start-0" style="z-index: 9999">
+  <img class="abax-favicon" type="image/svg" src="abax-favicon.png" alt="logo" />
+</div>
+
+<div *ngIf="!isTicketsPage()" class="just-to-show-i-can-use-css-container">
+  <h2 [routerLink]="['/tickets']" style="cursor: pointer;">
+    {{ "Common.BuyTicket" | translate }}
+  </h2>
+</div>
+
+<div class="position-fixed top-0 end-0 p-2 flag-chooser">
+  <a (click)="changeLanguage('en')">
+    <img src="flag-gb.png" alt="EN" class="flag" />
+  </a>
+  <a (click)="changeLanguage('pl')">
+    <img src="flag-pl.png" alt="PL" class="flag" />
+  </a>
+</div>

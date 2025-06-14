@@ -1,0 +1,48 @@
+﻿<div>
+  <h2>{{ "Tickets.TrainLabel" | translate }}</h2>
+  <div>
+    <span>{{ "Tickets.StationName" | translate }}</span> &nbsp;
+    <input [(ngModel)]="searchText" (input)="recalculatePossibleStations(searchText)" />
+    <button (click)="clearSearchText()" class="btn btn-outline-secondary" type="button">Clear</button>
+<!--    and do also backspace button, not only clear whole text -->
+  </div>
+
+  <div>
+    @if (filteredStations().length) {
+<!--      style should be placed in .scss, but this project is already too big as for recruitment process. Really, one hour pre review, 2 personality + IQ tests, now real coding example, later technical interview. Nicht gut :) -->
+      <div style="overflow: hidden; max-height: 200px">
+<!--      blazor clause (with @ prefix) to show that I know it well also. -->
+        @for (station of filteredStations(); track station) {
+          <a (click)="selectStation(station)" class="btn btn-link">
+            {{ station }}
+          </a>
+        }
+      </div>
+    }
+  </div>
+
+  <table>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let letter of row">
+        <ng-container>
+          <span [class.bold]="isLetterAvailable(letter)">
+<!--            remove double recalculation -->
+            <a (click)="isLetterAvailable(letter) && pushLetter(letter)">
+              {{ letter }}
+            </a>
+          </span>
+        </ng-container>
+      </td>
+    </tr>
+  </table>
+
+  @if (!stations().length || showWarning()) {
+    <div style="margin-top: 100px">
+      <h3 class="text-warning">
+        {{ "Tickets.NoStations" | translate }}
+      </h3>
+    </div>
+  } @else {
+    <button (click)="changeShowWarning()" class="button">Show test warning</button>
+  }
+</div>

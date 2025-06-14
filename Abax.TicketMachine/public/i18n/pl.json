@@ -1,0 +1,10 @@
+{
+  "Common": {
+    "BuyTicket": "Kup bilet (kliknij)"
+  },
+  "Tickets": {
+    "TrainLabel": "Bilety kolejowe",
+    "StationName": "Nazwa stacji",
+    "NoStations": "Brak stacji. Prosimy zadzwonic pod: +48 666 666 666"
+  }
+}

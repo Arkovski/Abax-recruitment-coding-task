@@ -1,0 +1,55 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+
+  .flag-chooser {
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-right: 30px;
+
+    a {
+      text-decoration: none;
+    }
+
+    .flag {
+      width: 32px;
+      height: 24px;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease-in-out,
+        opacity 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 35px;
+      margin-right: 50px;
+    }
+  }
+
+  img.abax-favicon {
+    width: 50px;
+    height: auto;
+    margin-top: 100px;
+    margin-left: 20px;
+
+    @media (max-width: 768px) {
+      margin-top: 85px;
+      margin-left: 10px;
+    }
+  }
+
+  .just-to-show-i-can-use-css-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+  }
+}
